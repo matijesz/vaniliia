@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VANILIIA CAKE | ARTYSTYCZNE TORTY</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --vanilla-bg: #fdfaf5;
+            --dark-text: #1a1a1a;
+            --accent: #b59a7d;
+            --white: #ffffff;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; text-transform: uppercase; }
+        
+        body { 
+            font-family: 'Montserrat', sans-serif; 
+            background-color: var(--vanilla-bg); 
+            color: var(--dark-text);
+            letter-spacing: 1px;
+            scroll-behavior: smooth;
+        }
+
+        /* Nawigacja */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: var(--white);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .logo { 
+            font-family: 'Playfair Display', serif; 
+            font-size: 1.8rem; 
+            color: var(--dark-text); 
+            font-weight: 700;
+        }
+
+        .nav-links { display: flex; list-style: none; }
+        .nav-links li { margin-left: 30px; }
+        .nav-links a { 
+            text-decoration: none; 
+            color: var(--dark-text); 
+            font-size: 0.85rem; 
+            font-weight: 700;
+            transition: 0.3s;
+        }
+
+        .burger { display: none; cursor: pointer; z-index: 1100; }
+        .burger div {
+            width: 25px;
+            height: 3px;
+            background-color: var(--dark-text);
+            margin: 5px;
+            transition: 0.3s;
+        }
+
+        /* Hero Section */
+        header {
+            height: 100vh;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1535141192574-5d4897c12636?auto=format&fit=crop&w=1500&q=80') center/cover;
+            color: var(--white);
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0, 0, 0, 0.6);
+            z-index: 1;
+        }
+
+        .hero-text { position: relative; z-index: 2; padding: 0 20px; }
+        .hero-text h1 { 
+            font-family: 'Playfair Display', serif; 
+            font-size: clamp(3rem, 10vw, 5rem); 
+            margin-bottom: 10px;
+        }
+
+        /* Sekcje */
+        section { padding: 100px 10%; text-align: center; }
+        .section-title { margin-bottom: 50px; }
+        .section-title h2 { font-family: 'Playfair Display', serif; font-size: 2.5rem; }
+        .section-title div { width: 50px; height: 3px; background: var(--accent); margin: 15px auto; }
+
+        /* O Nas */
+        #o-nas { background: var(--white); }
+        .about-content { max-width: 800px; margin: 0 auto; line-height: 1.8; text-transform: none; }
+
+        /* Oferta */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        .card {
+            background: var(--white);
+            padding: 50px 30px;
+            border-bottom: 3px solid var(--accent);
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+        }
+
+        /* Kontakt */
+        #kontakt { background: #f9f9f9; }
+        .contact-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 40px; text-align: left; }
+        .info-item { margin-bottom: 20px; }
+        .info-item h4 { margin-bottom: 10px; color: var(--accent); }
+        .map-frame { width: 100%; height: 300px; border: 0; filter: grayscale(1); }
+
+        @media screen and (max-width: 768px) {
+            .nav-links {
+                position: fixed;
+                right: 0; top: 0; height: 100vh;
+                background: var(--white);
+                width: 70%;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transform: translateX(100%);
+                transition: 0.5s ease;
+            }
+            .nav-links.active { transform: translateX(0); }
+            .burger { display: block; }
+        }
+
+        footer { padding: 40px; text-align: center; background: var(--dark-text); color: var(--white); font-size: 0.75rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="logo">VANILIIA</div>
+        <ul class="nav-links">
+            <li><a href="#home">START</a></li>
+            <li><a href="#o-nas">O NAS</a></li>
+            <li><a href="#oferta">OFERTA</a></li>
+            <li><a href="#kontakt">KONTAKT</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+    <header id="home">
+        <div class="overlay"></div>
+        <div class="hero-text">
+            <h1>VANILIIA CAKE</h1>
+            <p>ARTYSTYCZNE WYPIEKI OPOLE</p>
+        </div>
+    </header>
+
+    <section id="o-nas">
+        <div class="section-title">
+            <h2>O NASZEJ PASJI</h2>
+            <div></div>
+        </div>
+        <div class="about-content">
+            <p>VANILIIA TO MIEJSCE, GDZIE CUKIERNICTWO SPOTYKA SIĘ ZE SZTUKĄ. NASZĄ SPECJALNOŚCIĄ SĄ UNIKALNE TORTY I DESERY, KTÓRE ZACHWYCAJĄ NIE TYLKO SMAKIEM, ALE I PRECYZJĄ WYKONANIA. KAŻDY WYPIEK TWORZYMY Z WYSELEKCJONOWANYCH, NATURALNYCH SKŁADNIKÓW, DBAJĄC O NAJMNIEJSZY DETAL.</p>
+        </div>
+    </section>
+
+    <section id="oferta">
+        <div class="section-title">
+            <h2>NASZA OFERTA</h2>
+            <div></div>
+        </div>
+        <div class="grid">
+            <div class="card">
+                <h3>TORTY WESELNE</h3>
+                <p style="text-transform: none; margin-top: 15px;">INDYWIDUALNE PROJEKTY, KTÓRE STANĄ SIĘ OZDOBĄ WASZEGO DNIA.</p>
+            </div>
+            <div class="card">
+                <h3>MONOPORCJE</h3>
+                <p style="text-transform: none; margin-top: 15px;">NOWOCZESNE DESERY DLA TYCH, KTÓRZY SZUKAJĄ CZEGOŚ WYJĄTKOWEGO.</p>
+            </div>
+            <div class="card">
+                <h3>SŁODKIE STOŁY</h3>
+                <p style="text-transform: none; margin-top: 15px;">KOMPLEKSOWA OPRAWA SŁODKOŚCI NA KAŻDĄ OKAZJĘ.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt">
+        <div class="section-title">
+            <h2>KONTAKT</h2>
+            <div></div>
+        </div>
+        <div class="contact-grid">
+            <div>
+                <div class="info-item">
+                    <h4>ADRES</h4>
+                    <p>UL. PRZYKŁADOWA 1, OPOLE</p>
+                </div>
+                <div class="info-item">
+                    <h4>TELEFON</h4>
+                    <p>+48 123 456 789</p>
+                </div>
+                <div class="info-item">
+                    <h4>GODZINY OTWARCIA</h4>
+                    <p>WT-PT: 10:00 - 18:00<br>SOB: 10:00 - 14:00</p>
+                </div>
+            </div>
+            <div>
+                <div style="background: #ddd; height: 100%; min-height: 250px; display: flex; align-items: center; justify-content: center;">
+                    <p>[ MAPA GOOGLE ]</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>VANILIIA CAKE &copy; 2026 | WSZYSTKIE PRAWA ZASTRZEŻONE</p>
+    </footer>
+
+    <script>
+        const burger = document.querySelector('.burger');
+        const nav = document.querySelector('.nav-links');
+
+        burger.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            burger.classList.toggle('toggle');
+            
+            if(nav.classList.contains('active')) {
+                document.querySelector('.line1').style.transform = 'rotate(-45deg) translate(-5px, 6px)';
+                document.querySelector('.line2').style.opacity = '0';
+                document.querySelector('.line3').style.transform = 'rotate(45deg) translate(-5px, -6px)';
+            } else {
+                document.querySelector('.line1').style.transform = 'none';
+                document.querySelector('.line2').style.opacity = '1';
+                document.querySelector('.line3').style.transform = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
